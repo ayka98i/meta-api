@@ -2,6 +2,7 @@
 extern crate rocket;
 
 use chrono::{DateTime, Local};
+use meta_api::db;
 use rocket::http::Status;
 use rocket::serde::json::Json;
 use rocket::serde::{Deserialize, Serialize};
@@ -83,6 +84,8 @@ async fn main() -> Result<(), rocket::Error> {
     let db: DatabaseConnection = Database::connect("mysql://admin:admin@localhost:3307")
         .await
         .unwrap();
+
+    // db::init()
 
     let _rocket = rocket::build()
         .mount("/health", routes![get_health])
