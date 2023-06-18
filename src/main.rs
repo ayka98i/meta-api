@@ -5,6 +5,7 @@ use chrono::{DateTime, Local};
 use rocket::http::Status;
 use rocket::serde::json::Json;
 use rocket::serde::{Deserialize, Serialize};
+use sea_orm::{Database, DatabaseConnection};
 
 #[get("/")]
 fn get_health() -> &'static str {
@@ -61,6 +62,10 @@ fn delete_token_metadata(contract_address: &str, token_id: u64) {}
 
 #[rocket::main]
 async fn main() -> Result<(), rocket::Error> {
+    let db: DatabaseConnection = Database::connect("mysql://admin:admin@localhost:3307")
+        .await
+        .unwrap();
+
     let _rocket = rocket::build()
         .mount("/health", routes![get_health])
         .mount(
