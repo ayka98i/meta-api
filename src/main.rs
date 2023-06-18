@@ -29,36 +29,54 @@ impl Test {
 }
 
 #[get("/")]
-fn get_contracts() -> Json<Test> {
-    Json(Test::new())
+fn get_contracts() {
+    todo!();
 }
 
 #[post("/")]
-fn add_contracts() {}
+fn add_contracts() {
+    todo!();
+}
 
 #[delete("/")]
-fn delete_contracts() {}
+fn delete_contracts() {
+    todo!();
+}
 
 #[get("/<contract_address>/tokens")]
-fn get_tokens_metadata(contract_address: &str) {}
+fn get_tokens_metadata(contract_address: &str) {
+    todo!();
+}
 
 #[post("/<contract_address>/tokens")]
-fn add_tokens_metadata(contract_address: &str) {}
+fn add_tokens_metadata(contract_address: &str) {
+    todo!();
+}
 
 #[delete("/<contract_address>/tokens")]
-fn delete_tokens_metadata(contract_address: &str) {}
+fn delete_tokens_metadata(contract_address: &str) {
+    todo!();
+}
 
 #[get("/<contract_address>/tokens/<token_id>")]
-fn get_token_metadata(contract_address: &str, token_id: u64) {}
+fn get_token_metadata(contract_address: &str, token_id: u64) {
+    todo!();
+}
 
 #[post("/<contract_address>/tokens/<token_id>")]
-fn add_token_metadata(contract_address: &str, token_id: u64) {}
+fn add_token_metadata(contract_address: &str, token_id: u64) {
+    todo!();
+}
 
 #[put("/<contract_address>/tokens/<token_id>")]
-fn update_token_metadata(contract_address: &str, token_id: u64) {}
+fn update_token_metadata(contract_address: &str, token_id: u64) {
+    todo!();
+}
 
 #[delete("/<contract_address>/tokens/<token_id>")]
-fn delete_token_metadata(contract_address: &str, token_id: u64) {}
+fn delete_token_metadata(contract_address: &str, token_id: u64) {
+    todo!();
+}
 
 #[rocket::main]
 async fn main() -> Result<(), rocket::Error> {
