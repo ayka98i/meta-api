@@ -81,11 +81,10 @@ fn delete_token_metadata(contract_address: &str, token_id: u64) {
 
 #[rocket::main]
 async fn main() -> Result<(), rocket::Error> {
-    let db: DatabaseConnection = Database::connect("mysql://admin:admin@localhost:3307")
-        .await
-        .unwrap();
+    let database_url = "mysql://root:root@localhost:3307/meta";
+    db::migrator::migration(database_url).await;
 
-    // db::init()
+    // db::migration()
 
     let _rocket = rocket::build()
         .mount("/health", routes![get_health])

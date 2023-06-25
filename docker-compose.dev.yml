@@ -15,5 +15,5 @@ services:
       - TZ=UTC
     volumes:
       - "./db/volume:/var/lib/mysql"
-      - "./db/init:/docker-entrypoint-initdb.d"
+      - "./db/migration:/docker-entrypoint-initdb.d"
       - "./db/config/:/etc/mysql/conf.d"

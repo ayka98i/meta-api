@@ -33,8 +33,8 @@ impl MigrationTrait for Migration {
                             .not_null(),
                     )
                     .col(ColumnDef::new(Metadatas::TokenId).integer())
-                    .col(ColumnDef::new(Metadatas::Metadata).string())
-                    .col(ColumnDef::new(Metadatas::CreatedAt).timestamp())
+                    .col(ColumnDef::new(Metadatas::Metadata).json())
+                    .col(ColumnDef::new(Metadatas::CreatedAt).timestamp().default())
                     .col(ColumnDef::new(Metadatas::UpdatedAt).timestamp())
                     .to_owned(),
             )
